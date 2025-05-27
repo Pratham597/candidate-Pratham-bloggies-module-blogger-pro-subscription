@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { getUserStatus, getProMetrics } from '../Api/testApi';
 import Card from '../Components/ProDashboard/Card';
+import { Link } from 'react-router-dom';
 
 export default function ProDashboard() {
   const [status, setStatus] = useState(null);
@@ -32,12 +33,12 @@ export default function ProDashboard() {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center text-center text-red-600">
         <p className="text-xl font-semibold mb-2">You're not a Pro user.</p>
-        <a
+        <Link
           href="/pricing"
           className="text-[#3F51B5] underline hover:text-[#303F9F] transition"
         >
           Go to /pricing to subscribe
-        </a>
+        </Link>
       </div>
     );
   }
